@@ -13,7 +13,7 @@ It covers
 ```bash
 npm install
 bower install
-``
+```
 
 You can use sublime,bracket or vim to edit content
 
