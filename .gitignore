@@ -21,7 +21,8 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
-
+*_spec/
+*-spec/
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
@@ -30,3 +31,5 @@ node_modules
 npm-debug.log
 dist
 .DS_Store
+
+working*.js

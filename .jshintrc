@@ -1,0 +1,24 @@
+{
+    "esnext": true,
+    "curly": true,
+    "eqeqeq": true,
+    "eqnull": true,
+    "expr": true,
+    "latedef": true,
+    "onevar": true,
+    "noarg": true,
+    "node": true,
+    "trailing": true,
+    "undef": true,
+    "unused": true,
+    "globals": {
+        "$traceurRuntime": false,
+        "describe": false,
+        "it": false,
+        "expect": false,
+        "before": false,
+        "beforeEach": false,
+        "after": false,
+        "afterEach": false
+    }
+}
