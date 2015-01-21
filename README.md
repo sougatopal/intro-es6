@@ -13,7 +13,7 @@ This project covers the following topics in ecmascript 5 and ecmascript 6
    * rest,spread
    * Shorthands objects,fat arrow
 * New Standard Library Objects(Map,WeakMap,Set)
-* Promise
+* Promises
 * Generators,Iterators
 * Object Meta Programming( mix of ES5,ES6 using Object protype objects)
 * New Syntax of Writing Class,Inheritence(apart from protyping)
@@ -36,7 +36,7 @@ bower install
 
 You can use any editor sublime,bracket,notepad++,webstorm,eclipse etc... 
 
-If you using Brackets then install the following extentions to make life easy
+If you are using Brackets then install the following extentions to make life easy
 * brackets-beautify
 * brackets-code-folding
 * brackets-es6 
@@ -45,7 +45,7 @@ If you using Brackets then install the following extentions to make life easy
 * camden.jshint
 * hdy.brackets-shell
 
-If you hate all these tools and editor and love vi then vim is also fine.
+If you hate all these tools,editors and love vi then vim is also fine.
 
 Note: Presenter plan to use `brackets` to present examples and run them.
 
@@ -54,6 +54,7 @@ Note: Presenter plan to use `brackets` to present examples and run them.
 ```bash
 jasmine-node dist/server/level1/*
 ```
+TODO: More Details need to add
 
 # Reference
 
