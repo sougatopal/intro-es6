@@ -1,6 +1,6 @@
 # Overview
 
-This project is a collection of various exercises to understand and experience ES5 and ES6. Initial work focused for JSChannel-Bengaluru Meetup http://www.meetup.com/JSChannel-Bengaluru/events/185020922/
+This project is a collection of various examples to understand and experience ES5 and ES6. Initial work focused for JSChannel-Bengaluru Meetup http://www.meetup.com/JSChannel-Bengaluru/events/185020922/
 
 ## Scope of Work
 
@@ -22,9 +22,12 @@ This project covers the following topics in ecmascript 5 and ecmascript 6
 
 It designs for various runtime envorinments (node.js and modern browsers) with Test Driven and Continous Learning through case studies
 
-# Preparation
+# Prerequisites
 
-## Prequites  
+* Node js ( https://iojs.org/ or Node 0.11.13+ http://blog.nodejs.org/release/ )
+* Most Recent Firefox or Chrome
+
+# Preparation
 
 
 ```bash
@@ -38,7 +41,7 @@ bower install
 
 You can use any editor sublime,bracket,notepad++,webstorm,eclipse etc... 
 
-If you are using Brackets then install the following extentions to make life easy
+If you are using Brackets then install the following extentions( https://brackets-registry.aboutweb.com/ ) to make life easy
 * brackets-beautify
 * brackets-code-folding
 * brackets-es6 
@@ -49,11 +52,12 @@ If you are using Brackets then install the following extentions to make life eas
 
 If you hate all these tools,editors and love vi then vim is also fine.
 
-Note: Presenter plan to use `brackets` to present examples and run them.
+Note: Presenter plans to use `brackets` to present examples and run them.
 
 ## Test Cases
 
 ```bash
+gulp
 jasmine-node dist/server/level1/*
 ```
 TODO: More Details need to add
@@ -66,3 +70,8 @@ TODO: More Details need to add
   * http://javascript.crockford.com/
   * http://speakingjs.com/es5/
   * http://jsbooks.revolunet.com/
+  
+
+# Todo
+
+* Examples and Usecases need to include
