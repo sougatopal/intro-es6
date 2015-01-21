@@ -24,6 +24,8 @@ It designs for various runtime envorinments (node.js and modern browsers) with T
 
 # Preparation
 
+## Prequites  
+
 
 ```bash
 npm install
