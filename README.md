@@ -57,6 +57,8 @@ Note: Presenter plans to use `brackets` to present examples and run them.
 ## Test Cases
 
 ```bash
+sudo npm install gulp -g
+sudo npm install jasmine-node -g
 gulp
 jasmine-node dist/server/level1/*
 ```
