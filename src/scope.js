@@ -7,12 +7,15 @@ function example() {
 example();
 
 function example2() {
-    "use strict";
+     "use strict";
     for (var i = 1; i < 5; i++) {
-            /*jshint -W083 */
-        setTimeout(function () {
-            console.log("Iteration"+i);
-        }, 10);
+        /*jshint -W083 */
+        var tempfn = (function(j){
+            return function(){
+            console.log("Iteration"+j);
+            };
+        })(i);
+        setTimeout(tempfn, 10);
     }
     console.log("Last"+i);
 }
