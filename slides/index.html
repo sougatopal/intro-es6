@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to ES6 - Harmony</title>
+
+		<meta name="description" content="Introduction to ES6 - Harmony">
+		<meta name="author" content="Bhaskar">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section>
+                <h1><div>Introduction</div><div>to</div> <div>ecmascript 6 -Harmony</div></h1>
+                    <p>
+						<small>Created by <a href="http://bhaskar.info">Bhaskar</a> </small>
+					</p>
+                </section>
+				
+
+				<section>
+					<h2>About Me</h2>
+					<div>
+                    <ul>
+                    
+                        <li>Full Stack Developer</li>
+                        <li>Project Manager,Product Manager,Scrum Master</li>
+                        <li>Father of two sweet littles</li>
+                        <li>Currently Works for <a href='http://ecsoftware.in'>EcSoftware</a></li>
+                    </ul>
+                    </div>
+				</section>
+                
+                <section id="framents">
+                   
+                    <h2>Agenda</h2>
+                    <div>
+                        <ul>
+                        <li>Introduction ECMAscript</li>
+                        <li>
+                            <div>ES6 New features</div>
+                             <small>
+    <ul>    
+        <li>Block Level Scope(let,const)</li>
+        <li>Object Creation with ES5,ES6</li>
+        <li>Symbols</li>
+        <li>Destructing Assignment</li>
+        <li>Function Enhancements
+        <ul>
+            <li>Default Values</li>
+            <li>Rest Parameters</li>
+            <li>Spread</li>
+            </ul>
+        </li>
+        
+        <li>Showhand Functions </li>
+        <li>Generators and Iterators</li>
+        <li>Promises</li>
+        <li>Templates</li>
+        <li>Classes and Inheritance</li>
+        <li>Modules</li>
+        </li>
+    </ul>
+        </small>
+    </li>
+    
+                        
+                        </ul>
+                    </div>
+                  
+                </section>
+                <section>
+                    <section>
+                <h2>ECMA Script Overview</h2>
+                    <div>
+                    
+                    </div>
+                    <ul>
+                    <li>Brendan Eich invented javascript at Netscape
+</li><li>Javascript is developing further by Ecma committee
+</li><li>The first edition of this Ecma Standard was adopted by the Ecma General Assembly of June 1997
+</li><li>The Ecma General Assembly of June 1998
+</li><li>approved the second edition of ECMA-262 to keep it fully aligned with ISO/IEC 16262.
+</li><li>Current working draft is 6th Editon</li>
+                    </ul>
+                        </section>
+                    <section><small>
+                   					<table>
+						<thead>
+							<tr>
+								<th>Edition 3.0</th>
+								<th>Edition 4.0</th>
+                                <th>Edition 5.0,5.1</th>
+                                <th>Edition 6.0</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>June 2002</td>
+								<td>Un-published</td>
+								<td>March 2011</td>
+                                <td>Working Version 
+as on Jan 2015</td>
+							<tr>
+						
+							<tr>
+								<td class="fragment"><ul><li>Regular Expressions
+</li><li>Better String Handling
+</li><li>New Control Statements
+</li><li>try/catch
+</li><li>Defintions of Errors
+</li><li>Formating for Numeric Output</li></ul></td>
+								<td class="fragment">Significant work was done 
+but not published 
+due to incompatabile  3.0 
+and not approved</td>
+								<td class="fragment"><ul><li>Accessor properties
+</li><li>Reflective creation
+</li><li>Inspection of objects
+</li><li>Program control of property attributes
+</li><li>Additional array manipulation functions
+</li><li>Support for the JSON 
+</li><li>Strict mode
+</li><li>Became codified de facto interpretations</li>
+                                    </ul></td>
+                                <td class="fragment"><ul>
+                                    <li>New Methods 
+</li><li>Block level variables
+</li><li>Shorthands on functions
+</li><li>Iterators and Generators
+</li><li>Symbols
+</li><li>Proxies
+</li><li>Promise
+</li><li>Templates
+</li><li>more...</li>
+                                    </ul></td>
+							<tr>
+						</tbody>
+					</table></small>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                    <h2>What is the output of the following script?</h2>
+                    <div>
+                        <pre>
+                        <code data-trim contenteditable>function example() {
+    console.log(msg);
+    var msg = "hello world";
+}
+example();
+</code></pre></div></section>
+<section>
+                    <h2>What is the output of this script?</h2>
+                    <div>
+                        <pre><code>function example2() {
+    for (var i = 1; i < 5; i++) {
+        setTimeout(function () {
+            console.log("Iteration"+i);
+        }, 10);
+    }
+    console.log("Last"+i);
+}
+example2();
+                        </code>
+                        </pre>
+                        </div>
+                    </section>
+                    <section>
+                         <h2>OUTPUT??</h2>
+                    <pre>
+                    <code>
+undefined //function example1 output
+
+Last5     //function example2 output
+Iteration5
+Iteration5
+Iteration5
+Iteration5
+                    </code>
+                    </pre>    
+                    </section>
+                    <section>
+                        
+                         <h2>Why??</h2>
+                    <ul>
+                        <li>Hoisting - Moving declarations to Top </li>
+                        <li>Variable Reference is not maintained correctly</li>
+                            </ul>   
+                    </section>
+                        <section>
+                        <h2>Solution Before ES6</h2>
+    <div>
+    <pre>
+    <code>function example2() {
+     "use strict";
+    for (var i = 1; i < 5; i++) {
+        var tempfn = (function(j){
+            return function(){
+            console.log("Iteration"+j);
+            };
+        })(i);
+        setTimeout(tempfn, 10);
+    }
+    console.log("Last"+i);
+}
+example2();
+    </code>
+    </pre>
+    </div>
+                    </section>
+                        <section>
+                        <h2>Solution Through ES6</h2>
+    <div>
+    <pre>
+    <code>function example2() {
+    "use strict";
+    for (let i = 1; i < 5; i++) {
+        setTimeout(function () {
+            console.log("Iteration"+i);
+        }, 10);
+    }
+    
+}
+example2();
+
+    </code>
+    </pre>
+    </div>
+                    </section>
+                        
+                        
+                </section>
+                <section>
+                    <section>
+                    <h2>How can I improve this code?</h2>
+                        <div><pre><code>function Product(){
+}
+Product.prototype.vat=0.02;
+Product.prototype.priceWithVat=function(){
+return this.price * (1+this.vat)
+}
+var p = new Product();
+p.name = "Product1"
+p.price = 100;
+console.log(p.priceWithVat());
+var p2 = new Product();
+p2.name = "Product1"
+p2.vat = 0.3;
+p2.description = "..."
+p2.price = 100;
+console.log(p2.priceWithVat());
+
+</code></pre></div>
+                        <div  class="fragment">
+                        <ul>
+                            <li>Vat should be fixed</li><li> manipulation of Vat is restricted.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section>
+                    <h2>Is it OK?</h2>
+                    <div>
+                        <pre>
+                        <code>var Product = {}
+Object.defineProperty(Product,"vat",{
+value:0.02,
+readonly:true
+});
+
+Product.priceWithVat=function(){
+return this.price * (1+this.vat)
+};
+
+var p = Object.create(Product);
+p.name = "Product1"
+p.price = 100;
+console.log(p.priceWithVat());
+var p2 = Object.create(Product);
+p2.name = "Product1"
+p2.vat = 0.3;
+p2.price = 100;
+console.log(p2.priceWithVat());
+
+                        </code>
+                        </pre>
+                        </div>
+                        <div  class="fragment">
+                        <ul>
+                            <li>Take use of Object.defineProperty</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <section>
+                    <h2>Do you have simple solution?</h2>
+                        <div><pre><code>function Product(){
+}
+
+Product.prototype.priceWithVat=function(){
+const vat = 0.02;
+return this.price * (1+vat)
+}
+var p = new Product();
+p.name = "Product1"
+p.price = 100;
+console.log(p.priceWithVat());
+var p2 = new Product();
+p2.name = "Product1"
+p2.vat = 0.3;
+p2.price = 100;
+console.log(p2.priceWithVat());
+                        </code></pre></div>
+                    </section>
+                           
+                            </section>
+                            <section>
+                            <h2>destructuring assignment</h2>
+                                <div>
+                                <pre>
+                                <code>var product={
+name:"Product1",
+description:"......",
+vat:0.02,
+price:120,
+attributes:{
+    width:100,
+    height:200
+}
+};
+function size(product){
+    
+let {width,height}=product.attributes;
+return width * height;
+}
+describe("Product Attributes ", function () {
+
+    it("Find Size", function () {
+        var estimatedValue=100*200;
+        expect(size(product)).toBe(estimatedValue);
+    });
+});
+                                </code>
+                                </pre>
+                                    </div>
+                            </section>
+
+
+<section>
+ <h2>Symbols</h2>                          
+    <div>A symbol is a unique and immutable data type and may be used as an identifier for object properties. The symbol object is an implicit object wrapper for the symbol primitive data type.</div>
+    <div><pre><code>var sym1 = Symbol();
+var sym2 = Symbol("foo");
+var sym3 = Symbol("foo");
+Symbol("foo") === Symbol("foo"); // false
+    </code></pre></div>
+</section>
+<section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Arrow Functions</h2> 
+    <small>
+<ul>
+    <li>Replace to anonymous functions </li>
+    <li>Sharing this variable for calling function</li>
+        </ul></small>
+    <iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a0trh4/"></iframe></section>
+<section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Iterators</h2>  
+    <small>
+    <ul>
+    <li>Object to iterate over properties.</li>
+    <li>Object implements method 'next' </li>
+    <li>next method return object with value,done properties
+        <ul>
+         <li>'value' Holds Current Item Value</li>
+         <li>if 'done' is false means no item available to iterate</li>
+        </ul>
+        </li>
+    <li>use for-of loop to hide the complexity for access data</li>
+        
+</ul></small>
+<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a3t24v/"></iframe>
+</section>
+<section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Maps</h2>
+    <small>
+      <ul>
+    <li>Provide key-value store  </li>
+    <li>It contains various methods return iterators to access data
+        <ul>
+         <li>'keys'</li>
+         <li>'values'</li>
+         <li>'entries'</li>
+        </ul>
+        </li>
+        
+</ul></small>
+<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a4153c/"></iframe></section>
+                            <section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Sets</h2><small>
+                                    <ul>
+    <li>Set objects are collections of values</li>
+    <li>It contains various methods return iterators to access data
+        <ul>
+         <li>'keys'</li>
+         <li>'values'</li>
+         <li>'entries'</li>
+        </ul>
+        </li>
+        
+                                </ul></small>
+<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a40csh/"></iframe></section>
+                            
+                            
+<section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Generators</h2>                          
+<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a15qkm/"></iframe></section>
+<section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Promises</h2>                          
+<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a19t2d/"></iframe></section>
+<section data-background="#ffffff"  style="width:100%;height:100%">
+    <section>
+        <h2>Templates</h2>
+        <iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a1g6vc/"></iframe>
+    </section>
+    <section>
+        <h2>DSL in Javascript</h2>
+    <iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a1d9ou/"></iframe>  </section>                        
+                            </section>
+
+<section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Classes and Inheritance</h2>                          
+<iframe width="100%" height="300" frameborder="0" allowfullscreen src="http://www.es6fiddle.net/embed/i5a140ie/"></iframe></section>
+<section data-background="#ffffff"  style="width:100%;height:100%">
+ <h2>Modules</h2>                          
+
+                            <div>DEMO</div>
+                            </section>
+<section >
+ <h2>Summary</h2>   
+    <small>
+<ul>
+    <li>
+    How to run ES6 Feature in different environments
+    </li>
+    <li>ES6 New features
+    <ul>    
+        <li>Block Level Scope(let,const)</li>
+        <li>Object Creation with ES5,ES6</li>
+        <li>Destructing Assignment</li>
+        <li>Function Enhancements
+        <ul>
+            <li>Default Values</li>
+            <li>Rest Parameters</li>
+            <li>Spread</li>
+            </ul>
+        </li>
+        
+        <li>Showhand Functions(=>) </li>
+        <li>Generators and Iterators</li>
+        <li>Promises</li>
+        <li>Templates</li>
+        <li>Classes and Inheritance</li>
+        <li>Modules</li>
+        </li>
+    </ul>
+        
+    </li>
+    </ul>
+                            </small>
+    </section>
+
+                            
+<section  style="width:100%;height:100%" >
+                           
+        <iframe  src="http://kangax.github.io/compat-table/es6/" height="100%" width="100%" ></iframe>
+
+                            </section>
+
+                             <section style="text-align: left;">
+                                 <h2>Reference</h2>
+                                 <small>
+                                 <div><ul>
+<li><a href="http://kangax.github.io/compat-table/es6/">http://kangax.github.io/compat-table/es6/</a></li>
+<li><a href="http://addyosmani.com/blog/ecmascript-6-resources-for-the-curious-javascripter/">http://addyosmani.com/blog/ecmascript-6-resources-for-the-curious-javascripter/</a></li>
+<li><a href="https://github.com/paulmillr/es6-shim">https://github.com/paulmillr/es6-shim</a></li>
+<li><a href="https://github.com/WebReflection/es6-collections">https://github.com/WebReflection/es6-collections</a></li>
+<li><a href="https://github.com/ModuleLoader/es6-module-loader">https://github.com/ModuleLoader/es6-module-loader</a></li>
+<li><a href="http://code.google.com/p/traceur-compiler/wiki/LanguageFeatures">http://code.google.com/p/traceur-compiler/wiki/LanguageFeatures</a></li>
+<li><a href="http://espadrine.github.io/New-In-A-Spec/es6/">http://espadrine.github.io/New-In-A-Spec/es6/</a></li>
+<li><a href="https://github.com/addyosmani/es6-tools">https://github.com/addyosmani/es6-tools</a></li>
+<li><a href="https://github.com/karma-runner/karma-traceur-preprocessor">https://github.com/karma-runner/karma-traceur-preprocessor</a></li>
+<li><a href="https://github.com/sindresorhus/esnext-showcase">https://github.com/sindresorhus/esnext-showcase</a></li>
+<li><a href="http://www.2ality.com/2014/08/es6-today.html">http://www.2ality.com/2014/08/es6-today.html</a></li>
+<li><a href="https://github.com/google/traceur-compiler/wiki/Getting-Started">https://github.com/google/traceur-compiler/wiki/Getting-Started</a></li>
+<li><a href="http://guybedford.com/practical-workflows-for-es6-modules">http://guybedford.com/practical-workflows-for-es6-modules</a></li>
+<li><a href="https://iojs.org/es6.html">https://iojs.org/es6.html</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview</a></li>
+<li><a href="http://www.2ality.com/2014/08/es6-today.html">http://www.2ality.com/2014/08/es6-today.html</a></li>
+<li><a href="http://es6rocks.com/">http://es6rocks.com/</a></li>
+</ul>
+<p>online ES6 Testing tools</p>
+<ul>
+<li><a href="https://google.github.io/traceur-compiler/demo/repl.html">https://google.github.io/traceur-compiler/demo/repl.html</a></li>
+<li><a href="http://es6fiddle.net">http://es6fiddle.net</a></li>
+</ul>
+</div></small>
+                </section>
+                            
+				<section style="text-align: left;">
+					<h1>Thank you</h1>
+                    
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
