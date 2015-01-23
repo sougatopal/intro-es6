@@ -1,22 +1,22 @@
 function example() {
     "use strict";
+    try{
     console.log(msg);
-    /*jshint -W003 */
-    var msg = "hello world";
+    let msg = "hello world";
+    }catch(e){
+    console.log(e);
+    }
 }
 example();
 
 function example2() {
-     "use strict";
-    for (var i = 1; i < 5; i++) {
-        /*jshint -W083 */
-        var tempfn = (function(j){
-            return function(){
-            console.log("Iteration"+j);
-            };
-        })(i);
-        setTimeout(tempfn, 10);
+    "use strict";
+    for (let i = 1; i < 5; i++) {
+            /*jshint -W083 */
+        setTimeout(function () {
+            console.log("Iteration"+i);
+        }, 10);
     }
-    console.log("Last"+i);
+    
 }
 example2();
